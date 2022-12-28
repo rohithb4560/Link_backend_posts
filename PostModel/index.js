@@ -98,11 +98,11 @@ module.exports.post = new mongoose.model("post", postSchema)
 //         "commentatorImage": "https://images.pexels.com/photos/6618822/pexels-photo-6618822.jpeg?auto=compress&cs=tinysrgb&w=1600",
 //         "commentatorName": "Jim cling",
 //         "commentatorDesignation": "Creator a hustlers lab",
-//         "comment": [
+//         "comment": 
 //           "Hah! that what what i was thinking "
-//         ],
+//         ,
 //         "commentTime": "4h",
 //         "commentLikes": 765
-//       }
+//       },{}
 //     ]
 //   }
