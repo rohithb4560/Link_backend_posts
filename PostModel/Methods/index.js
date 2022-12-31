@@ -20,6 +20,6 @@ module.exports.updatePost = body=>{
   return post.findOneAndUpdate(body)
 }
 
-module.exports.postComment = body=>{
-  return post.findOneAndUpdate(body)
+module.exports.postComment =(filterquery,body)=>{
+  return post.findByIdAndUpdate(filterquery,body)
 }

@@ -31,12 +31,18 @@ module.exports.updatePost = async (req,res)=>{
     res.send(data)
 }
 module.exports.postComment = async (req,res)=>{
-    const post = await getpost({...req.body.id})
-    console.log(req.body)
-    const postComments = post.comments
+
+    const filterQuery = { _id:req.body._id};
+
+    const post = await getpost(filterQuery)
+
+     const postComments = post.comments
     const allComments = [...postComments,...req.body.comments]
-    const data = await updatePost({"comments":allComments,"_id":req.body.id})
+    console.log(allComments)
+    const data = await postComment(filterQuery,{comments:allComments})
     res.send(data)
+
+
 }
 
 
