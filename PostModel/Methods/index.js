@@ -16,8 +16,8 @@ module.exports.getpost = filterQuery=>{
 module.exports.getAllposts =(filterQuery)=>{
     return post.find(filterQuery)
 }
-module.exports.updatePost = body=>{
-  return post.findOneAndUpdate(body)
+module.exports.updatePost =(filterquery,body)=>{
+  return post.findOneAndUpdate(filterquery,body)
 }
 
 module.exports.postComment =(filterquery,body)=>{

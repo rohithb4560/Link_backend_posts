@@ -26,8 +26,11 @@ module.exports.getAllposts = async (req,res)=>{
 }
 
 module.exports.updatePost = async (req,res)=>{
+    const filterQuery = { _id:req.body._id};
+
+    const post = await getpost(filterQuery)
  
-    const data = await updatePost({...req.body})
+    const data = await updatePost(filterQuery,{...req.body})
     res.send(data)
 }
 module.exports.postComment = async (req,res)=>{
